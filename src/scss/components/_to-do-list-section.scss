@@ -1,3 +1,19 @@
-section {
+.to-do-container {
   margin-top: 2rem;
+  border: 1px red solid;
+  background: linear-gradient(orange, pink);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  h1 {
+    color: white;
+  }
+  ul {
+    border: white 0.2rem dotted;
+    min-height: 4rem;
+  }
+  li {
+    // text-decoration-line: overline;
+    border-bottom: gray 0.1rem solid;
+    text-indent: 0.5rem;
+  }
 }
