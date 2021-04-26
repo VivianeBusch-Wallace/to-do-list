@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/components/_to-do-list-section.scss","../scss/base/_normalize.scss","../scss/abstracts/_mixins.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;;AACA;EACE;;AAEF;EACE;EACA;;AAEF;EAEE;EACA;;;AChBJ;EACE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;ECLA;EACA,iBALkB;EAMlB,aALc;EAMd,gBALiB","file":"main.css"}
