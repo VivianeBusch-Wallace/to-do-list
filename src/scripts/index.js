@@ -9,8 +9,10 @@ const addItem = () => {
     let itemText = document.createTextNode(listItem);
     // inject nodes into html >>
     newLi.appendChild(itemText);
-
     document.querySelector(".to-do-list").appendChild(newLi);
+    // creating a priority element >>
+    let priority = document.createElement("ol");
+    priority.appendChild(itemText);
     // clear input area for next item to add >>
     document.querySelector("#new-to-do-item").value = "";
   } else {
@@ -20,7 +22,7 @@ const addItem = () => {
   }
 };
 
-// For Hadi's to do list example
+// ========== For Hadi's to do list example ==========
 
 const addToList = (e) => {
   // Preventing the from sending information out aka Reloading the page
