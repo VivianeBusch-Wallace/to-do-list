@@ -1,6 +1,6 @@
-// flex center
+// flex settings
 @mixin flex-box(
-  $justify-content: "center",
+  $justify-content: center,
   $align-items: center,
   $flex-direction: row
 ) {
