@@ -8,7 +8,7 @@ const addItem = () => {
     // define text, create node from listItem >>
     let itemText = document.createTextNode(listItem);
     // inject nodes into html >>
-    newLi.appendChild(text);
+    newLi.appendChild(itemText);
     document.querySelector(".to-do-list").appendChild(newLi);
     // clear input area for next item to add >>
     document.querySelector("#new-to-do-item").value = "";
