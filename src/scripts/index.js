@@ -5,14 +5,36 @@ const addItem = () => {
   if (listItem != "") {
     // create new list item for ul >>
     let newLi = document.createElement("li");
+    const button1 = document.createElement("input");
+    const button2 = document.createElement("input");
+    const button3 = document.createElement("input");
+    // button1.classList
+    button1.value = "1";
+    button2.innerText = "2";
+    button3.innerText = "3";
+
+    button1.type = "radio";
+    button2.type = "radio";
+    button3.type = "radio";
+
+    button1.name = "radio";
+    button2.name = "radio";
+    button3.name = "radio";
     // define text, create node from listItem >>
     let itemText = document.createTextNode(listItem);
-    // inject nodes into html >>
+    // inject items into html (?) >>
+
     newLi.appendChild(itemText);
-    document.querySelector(".to-do-list").appendChild(newLi);
+    newLi.appendChild(button1);
+    newLi.appendChild(button2);
+    newLi.appendChild(button3);
+
+    // document.querySelector(".to-do-list").appendChild(newLi);
     // creating a priority element >>
-    let priority = document.createElement("ol");
-    priority.appendChild(itemText);
+    let priority = document.querySelector(".ordered-list");
+    priority.appendChild(newLi);
+    // document.querySelector(".ordered-list").appendChild(priority);
+    console.log(listItem);
     // clear input area for next item to add >>
     document.querySelector("#new-to-do-item").value = "";
   } else {
@@ -57,11 +79,12 @@ const addToList = (e) => {
     newContainer.appendChild(deleteButton);
     // Adding class
     doneButton.classList.add("done");
+    // append container
     newLi.appendChild(newContainer);
     // Complete function
     // toggle will check if the class name exist, will remove it and if it's not will add it
     const check = () => newLi.classList.toggle("completed");
-    // const del = () => newLi.remove() ;
+    // const del = () => newLi.remove();
     // Adding event listener to my buttons
     deleteButton.addEventListener("click", () => newLi.remove());
     doneButton.addEventListener("click", check);
@@ -89,4 +112,4 @@ const keyCheck = (event) => {
 // userInput.addEventListener("keypress", keyCheck);
 
 // Adding event listener to the form
-document.querySelector("form").addEventListener("submit", addToList);
+// document.querySelector("form").addEventListener("submit", addToList);
