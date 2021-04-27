@@ -23,7 +23,7 @@
     padding: 0.3rem;
     background: white;
   }
-  ul {
+  ol {
     margin-top: 1rem;
     border: white 0.2rem dotted;
     min-height: 4rem;
@@ -32,12 +32,14 @@
       border-bottom: gray 0.1rem solid;
       text-indent: 0.5rem;
       color: lightseagreen;
-    }
-  }
-  ol {
-    border: blue 1px solid;
-    li {
-      background: lightgreen;
+      display: flex;
+      justify-content: space-around;
+      label {
+        border: blue 1px solid;
+      }
+      input[type="radio"] {
+        align-self: flex-end;
+      }
     }
   }
 }
