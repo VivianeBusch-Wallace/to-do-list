@@ -3,7 +3,7 @@
   margin-top: 2rem;
   border: 1px red solid;
   box-shadow: -0.3rem 0.3rem 0.3rem 0.3rem rgb(165, 164, 164);
-  background: linear-gradient(orange, pink);
+  background: linear-gradient(pink, orange, skyblue);
   border-radius: 0.5rem;
   padding: 2rem;
   h1 {
@@ -28,6 +28,7 @@
     border: white 0.2rem dotted;
     min-height: 4rem;
     position: relative;
+    z-index: 2;
     &::before {
       content: "";
       position: absolute;
@@ -35,6 +36,7 @@
       height: 100%;
       background-color: white;
       opacity: 0.3;
+      z-index: 1;
     }
     li {
       // text-decoration-line: overline;
@@ -45,6 +47,7 @@
       justify-content: space-between;
       div {
         align-self: flex-end;
+        z-index: 3;
       }
       label {
         border: blue 1px solid;
