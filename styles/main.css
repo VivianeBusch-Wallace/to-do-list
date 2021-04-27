@@ -7,12 +7,13 @@
 }
 .to-do-container h1 {
   color: white;
+  font-style: oblique;
 }
 .to-do-container input[type=text] {
   border: none;
   font-size: large;
   padding: 0.3rem;
-  min-width: 20vw;
+  min-width: 40vw;
 }
 .to-do-container button {
   font-size: large;
@@ -21,10 +22,10 @@
   border: none;
   padding: 0.3rem;
   background: #c5ffb4;
-  color: #5d6d7c;
+  color: #747474;
 }
 .to-do-container ol {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   border: white 0.2rem dotted;
   min-height: 4rem;
   position: relative;
@@ -40,9 +41,10 @@
   z-index: 1;
 }
 .to-do-container ol li {
+  font-size: large;
   border-bottom: gray 0.1rem solid;
-  text-indent: 0.5rem;
-  color: lightseagreen;
+  text-indent: 0.2rem;
+  color: #242424;
   display: flex;
   justify-content: space-between;
 }
@@ -53,69 +55,24 @@
 .to-do-container ol li label {
   border: blue 1px solid;
 }
-
-.hadi-to-do-list {
-  border: yellowgreen 3px solid;
-  width: 40vw;
-  height: 10vh;
+.to-do-container .item-titles {
+  margin-top: 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
+  justify-content: space-evenly;
+  border: #8c9ef0 solid 2px;
 }
-.hadi-to-do-list form {
-  display: flex;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 50%;
-  height: 30%;
-  background-color: orange;
-  width: 50%;
+.to-do-container .high-priority {
+  font-weight: bold;
+  color: #c71559;
+  background-color: #f8a7a7;
 }
-.hadi-to-do-list form input[type=text] {
-  display: none;
-  border: none;
-  height: 1.5rem;
+.to-do-container .medium-priority {
+  color: darkorange;
+  background-color: #f8a7a7;
 }
-.hadi-to-do-list form button,
-.hadi-to-do-list form input[type=submit] {
-  display: none;
-  width: 4rem;
-  height: 1.5rem;
-  border: none;
-  background-color: #84ec64;
-}
-.hadi-to-do-list form li {
-  display: none;
-  height: 3rem;
-  max-width: 50vw;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  position: relative;
-}
-.hadi-to-do-list form li div {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.hadi-to-do-list form li button {
-  display: none;
-  width: 1rem;
-  height: 2rem;
-}
-.hadi-to-do-list .delete {
-  color: red;
-}
-.hadi-to-do-list .completed {
-  /* some fancy styles */
-  text-decoration: line-through;
-}
-.hadi-to-do-list .done {
-  background-color: green;
+.to-do-container .low-priority {
+  color: #5f5fec;
+  background-color: #f8a7a7;
 }
 
 :root {
