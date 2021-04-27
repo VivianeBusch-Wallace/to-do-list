@@ -1,14 +1,14 @@
 const addItem = () => {
   // make input value a variable>>
-  let listItemValue = document.querySelector("#new-to-do-item").value;
+  const listItemValue = document.querySelector("#new-to-do-item").value;
   //if input is empty don't add to to do list >>
   if (listItemValue != "") {
     // creating new elements and appending them >>>
 
     // creating a priority element >>
-    let toDoList = document.querySelector(".ordered-list");
+    const toDoList = document.querySelector(".to-do-list");
     // create new list item for ol >>
-    let newLi = document.createElement("li");
+    const newLi = document.createElement("li");
     // appending li to ol (~ list items to to do list) >>
     toDoList.appendChild(newLi);
 
@@ -16,13 +16,13 @@ const addItem = () => {
     const button1 = document.createElement("input");
     const button2 = document.createElement("input");
     const button3 = document.createElement("input");
-    // create labels for each radio button of priority
+    // create labels for each radio button of priority >>
     const label1 = document.createElement("label");
     const label2 = document.createElement("label");
     const label3 = document.createElement("label");
 
     // create text node from listItemValue >>
-    let itemText = document.createTextNode(listItemValue);
+    const itemText = document.createTextNode(listItemValue);
     // appending text node to list item (newLi => li)
     newLi.appendChild(itemText);
     // defining type of input boxes >>
@@ -35,6 +35,7 @@ const addItem = () => {
     button3.name = listItemValue;
     // << their name is the content of each list item because they are hopefully unique
 
+    // giving the labels a value >>
     label1.innerText = "priority high";
     label2.innerText = "priority medium";
     label3.innerText = "priority low";
@@ -42,10 +43,15 @@ const addItem = () => {
     label1.appendChild(button1);
     label2.appendChild(button2);
     label3.appendChild(button3);
-    // appending labels to each list item >>
-    newLi.appendChild(label1);
-    newLi.appendChild(label2);
-    newLi.appendChild(label3);
+
+    // create priority div box for radio buttons for styling purposes >>
+    const priorityOptions = document.createElement("div");
+    // append labels into priority div >>
+    priorityOptions.appendChild(label1);
+    priorityOptions.appendChild(label2);
+    priorityOptions.appendChild(label3);
+    // appending priority container to list item >>
+    newLi.appendChild(priorityOptions);
 
     console.log(itemText);
 
