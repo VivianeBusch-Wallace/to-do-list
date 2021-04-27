@@ -1,14 +1,19 @@
 const addItem = () => {
   // make input value a variable>>
   const listItemValue = document.querySelector("#new-to-do-item").value;
+  // create labels for each radio button of priority >>
+  const label1 = document.createElement("label");
+  const label2 = document.createElement("label");
+  const label3 = document.createElement("label");
+  // create new list item for ol >>
+  const newLi = document.createElement("li");
+
   //if input is empty don't add to to do list >>
   if (listItemValue != "") {
     // creating new elements and appending them >>>
 
     // creating a priority element >>
     const toDoList = document.querySelector(".to-do-list");
-    // create new list item for ol >>
-    const newLi = document.createElement("li");
     // appending li to ol (~ list items to to do list) >>
     toDoList.appendChild(newLi);
 
@@ -16,10 +21,6 @@ const addItem = () => {
     const button1 = document.createElement("input");
     const button2 = document.createElement("input");
     const button3 = document.createElement("input");
-    // create labels for each radio button of priority >>
-    const label1 = document.createElement("label");
-    const label2 = document.createElement("label");
-    const label3 = document.createElement("label");
 
     // create text node from listItemValue >>
     const itemText = document.createTextNode(listItemValue);
@@ -36,9 +37,15 @@ const addItem = () => {
     // << their name is the content of each list item because they are hopefully unique
 
     // giving the labels a value >>
-    label1.innerText = "priority high";
-    label2.innerText = "priority medium";
-    label3.innerText = "priority low";
+    label1.innerText = "high";
+    label2.innerText = "medium";
+    label3.innerText = "low";
+
+    // add classes to labels
+    label1.classList.add("high");
+    label2.classList.add("medium");
+    label3.classList.add("low");
+
     // appending radio buttons to label >>
     label1.appendChild(button1);
     label2.appendChild(button2);
@@ -62,6 +69,52 @@ const addItem = () => {
     document.querySelector("#new-to-do-item").placeholder =
       "Please enter text first";
   }
+  // what should happen on click of priority >>>
+  // when user clicks on high priority >>
+  const highPriority = () => {
+    if (label1.classList.contains("high")) {
+      console.log("click1");
+      newLi.classList.toggle("high-priority");
+      newLi.classList.remove("medium-priority");
+      newLi.classList.remove("low-priority");
+    }
+  };
+  // when user clicks on medium priority >>
+  const mediumPriority = () => {
+    if (label2.classList.contains("medium")) {
+      console.log("click2");
+      newLi.classList.toggle("medium-priority");
+      newLi.classList.remove("low-priority");
+      newLi.classList.remove("high-priority");
+    }
+  };
+  // when user clicks on low priority >>
+  const lowPriority = () => {
+    if (label3.classList.contains("low")) {
+      console.log("click3");
+      newLi.classList.toggle("low-priority");
+      newLi.classList.remove("medium-priority");
+      newLi.classList.remove("high-priority");
+    }
+  };
+
+  // const highPriority = () => {
+  //   console.log("click");
+  //   newLi.classList.toggle("priority");
+  // };
+  // // when user clicks on medium priority >>
+  // const mediumPriority = () => {
+  //   console.log("click");
+  //   newLi.classList.toggle("priority");
+  // };
+  // // when user clicks on low priority >>
+  // const lowPriority = () => {
+  //   console.log("click");
+  //   newLi.classList.toggle("priority");
+  // };
+  label1.addEventListener("click", highPriority);
+  label2.addEventListener("click", mediumPriority);
+  label3.addEventListener("click", lowPriority);
 };
 
 // ========== For Hadi's to do list example ==========
@@ -99,7 +152,7 @@ const addItem = () => {
 //     newContainer.appendChild(deleteButton);
 //     // Adding class
 //     doneButton.classList.add("done");
-//     // append container
+//     // append container into list item
 //     newLi.appendChild(newContainer);
 //     // Complete function
 //     // toggle will check if the class name exist, will remove it and if it's not will add it
@@ -127,9 +180,9 @@ const addItem = () => {
 //   console.log(event);
 //   if (e.key == "Enter") addToList();
 // };
-// Adding event listener to the input
+// // Adding event listener to the input
 // const userInput = document.querySelector("#userData");
 // userInput.addEventListener("keypress", keyCheck);
 
-// Adding event listener to the form
+// // Adding event listener to the form
 // document.querySelector("form").addEventListener("submit", addToList);

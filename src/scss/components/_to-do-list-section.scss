@@ -60,12 +60,32 @@
       // }
     }
   }
+  // list titles
   .item-titles {
     margin-top: 1rem;
     display: flex;
     justify-content: space-evenly;
     border: rgb(140, 158, 240) solid 2px;
   }
+  // toggle class high priority
+  .high-priority {
+    font-weight: bold;
+    color: rgb(199, 21, 89);
+    background-color: rgb(248, 167, 167);
+  }
+  // toggle class medium priority
+  .medium-priority {
+    color: darkorange;
+    background-color: rgb(248, 167, 167);
+  }
+  // toggle class low priority
+  .low-priority {
+    color: rgb(95, 95, 236);
+    background-color: rgb(248, 167, 167);
+  }
+  // .priority {
+  //   background-color: cadetblue;
+  // }
 }
 
 // Hadi's to do list settings (changed according to need)
