@@ -1,49 +1,54 @@
 const addItem = () => {
-  // grab value of input >>
-  let listItem = document.querySelector("#new-to-do-item").value;
+  // make input value a variable>>
+  let listItemValue = document.querySelector("#new-to-do-item").value;
   //if input is empty don't add to to do list >>
-  if (listItem != "") {
-    // create new list item for ul >>
+  if (listItemValue != "") {
+    // creating new elements and appending them >>>
+
+    // creating a priority element >>
+    let toDoList = document.querySelector(".ordered-list");
+    // create new list item for ol >>
     let newLi = document.createElement("li");
+    // appending li to ol (~ list items to to do list) >>
+    toDoList.appendChild(newLi);
+
+    // create radio buttons for priority >>
     const button1 = document.createElement("input");
     const button2 = document.createElement("input");
     const button3 = document.createElement("input");
-
+    // create labels for each radio button of priority
     const label1 = document.createElement("label");
     const label2 = document.createElement("label");
     const label3 = document.createElement("label");
 
-    // define text, create node from listItem >>
-    let itemText = document.createTextNode(listItem);
+    // create text node from listItemValue >>
+    let itemText = document.createTextNode(listItemValue);
+    // appending text node to list item (newLi => li)
     newLi.appendChild(itemText);
     // defining type of input boxes >>
     button1.type = "radio";
     button2.type = "radio";
     button3.type = "radio";
     // naming of input boxes so that it toggles between them >>
-    button1.name = listItem;
-    button2.name = listItem;
-    button3.name = listItem;
+    button1.name = listItemValue;
+    button2.name = listItemValue;
+    button3.name = listItemValue;
+    // << their name is the content of each list item because they are hopefully unique
 
-    label1.innerText = "priority one";
-    label2.innerText = "priority two";
-    label3.innerText = "priority three";
-    // append radio buttons to each list item >>
-
+    label1.innerText = "priority high";
+    label2.innerText = "priority medium";
+    label3.innerText = "priority low";
+    // appending radio buttons to label >>
     label1.appendChild(button1);
     label2.appendChild(button2);
     label3.appendChild(button3);
-
+    // appending labels to each list item >>
     newLi.appendChild(label1);
     newLi.appendChild(label2);
     newLi.appendChild(label3);
 
-    // document.querySelector(".to-do-list").appendChild(newLi);
-    // creating a priority element >>
-    let priority = document.querySelector(".ordered-list");
-    priority.appendChild(newLi);
-    // document.querySelector(".ordered-list").appendChild(priority);
     console.log(itemText);
+
     // clear input area for next item to add >>
     document.querySelector("#new-to-do-item").value = "";
   } else {
